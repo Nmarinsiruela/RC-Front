@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { UserMenuComponent } from './user-menu/user-menu.component';
+import { AdminComponent } from './admin/admin.component';
+import { BasicComponent } from './basic/basic.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { UserMenuComponent } from './user-menu/user-menu.component';
     SignupComponent,
     LoginComponent,
     DashboardComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    AdminComponent,
+    BasicComponent
   ],
   imports: [
     BrowserModule,

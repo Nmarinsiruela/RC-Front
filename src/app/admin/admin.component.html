@@ -1,6 +1,23 @@
-<div>
-  Users from secure api end point:
-  <ul>
-      <li *ngFor="let user of users">{{user.username}} {{user.maxStatus}}</li>
-  </ul>
+<div class=' adminComponent row'>
+  <div class='col-6'>
+      Users from secure api end point:
+      <button (click)='fetchAllUsers()'>Recargar</button>
+      <ul>
+        <li *ngFor="let user of users; let i = index">Username: {{user.username}} Max Status: {{user.maxStatus}}
+          <button (click)='goToUser(i)'>Acceder</button>
+        </li>
+      </ul>
+      <app-create-user-modal></app-create-user-modal>
+  </div>
+
+  <div class='col-6'>
+    <div *ngIf='!!userIsSelected === true'>
+      <p>User: {{selectedUser.username}}</p>
+      <p>Max Status: {{selectedUser.maxStatus}}</p>
+      <p>Characters: {{selectedUser.characters}}</p>
+
+      <button (click)='deleteUser(selectedUser.id)'>Borrar</button>
+      <button (click)='updateUser()'>Actualizar</button>
+    </div>
+  </div>
 </div>

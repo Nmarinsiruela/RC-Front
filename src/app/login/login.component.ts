@@ -52,6 +52,8 @@ export class LoginComponent implements OnInit {
     this.zone.run(() => {
       this.router.navigate([Constants.USERMENU_URL]);
     });
+    // This method would get the username from the response of the Login.
+    this.authenticationService.setActualUser(this.f.username.value);
     /*         this.authenticationService.login(this.f.username.value, this.f.password.value)
             .pipe(first())
             .subscribe(

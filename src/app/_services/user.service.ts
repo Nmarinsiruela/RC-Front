@@ -8,7 +8,9 @@ import { Constants } from '../app.constants';
 export class UserService {
     actualUser: User;
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+        this.actualUser = new User();
+    }
 
     getUser(): User {
         // return this.http.get<User[]>(`${Constants.BACKEND_URL}/${id}`);

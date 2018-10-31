@@ -13,11 +13,24 @@
   <div class='col-6'>
     <div *ngIf='!!userIsSelected === true'>
       <p>User: {{selectedUser.username}}</p>
-      <p>Max Status: {{selectedUser.maxStatus}}</p>
+      <form [formGroup]="updateForm" (ngSubmit)="updateUser()">
+        <div class="form-group">
+          <label color="primary">Max Status:</label>
+          <select class="input alin" formControlName="newStatus" [ngClass]="{ 'is-invalid': submitted && f.newStatus.errors }"
+            required>
+            <option *ngFor="let est of statusNames" [value]="est">{{est}}</option>
+          </select>
+          <div *ngIf="submitted && !!f.newStatus.errors" class="invalid-feedback">
+            <div *ngIf="!!f.newStatus.errors.required">Status is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Update Account</button>
+        </div>
+    </form>
       <p>Characters: {{selectedUser.characters}}</p>
 
       <button (click)='deleteUser(selectedUser.id)'>Borrar</button>
-      <button (click)='updateUser()'>Actualizar</button>
     </div>
   </div>
 </div>

@@ -1,2 +1,23 @@
-<a class="nav-link" (click)="goToSignup()">Signup</a>
-<a class="nav-link"  (click)="goToLogin()">Login</a>
+<!-- <div style="text-align:center">
+  <div class="card" style="display: inline-block; margin: 3%;">
+    <div class="card-body">
+      <h5 class="card-title">Opciones</h5>
+      <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-primary" (click)="goToLogin()">Login</button>
+      </div>
+
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-secondary" (click)="goToSignup()">Registrarse</button>
+      </div>
+    </div>
+  </div>
+
+</div> -->
+<div class='row'>
+  <div class='col-6'>
+    <app-login></app-login>
+  </div>
+  <div class='col-6'>
+    <app-signup></app-signup>
+  </div>
+</div>

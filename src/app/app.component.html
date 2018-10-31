@@ -1,8 +1,13 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}!
-  </h1>
-  </div>
+<nav class="navbar navbar-light p-3 mb-2 bg-info">
+
+    <span class="navbar-brand mr-2 h1 text-white" (click)="goToHome()">{{ title }}</span>
+    <div class="btn-group mr-2" role="group">
+      <button type="button" class="btn btn-secondary my-2" *ngIf='userIsLogged' (click)="goToBasic()">Create New Character</button>
+    </div>
+    <div class="btn-group mr-sm-2" role="group" style='text-align: right'>
+      <button class="btn btn-danger my-2 my-sm-0" type="button" *ngIf='userIsLogged && userIsAdmin' (click)="goToAdmin()">Admin
+        Area</button>
+    </div>
+</nav>
 
 <router-outlet></router-outlet>

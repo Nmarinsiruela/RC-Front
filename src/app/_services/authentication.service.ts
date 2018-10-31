@@ -2,13 +2,23 @@
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Constants } from '../app.constants';
+import { BehaviorSubject } from 'rxjs';
+import { UserService } from './user.service';
 
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     url;
-    constructor(private http: HttpClient) {
+    userName = new BehaviorSubject('Gestor RC');
+    userIsLogged = new BehaviorSubject(false);
+    userIsAdmin = new BehaviorSubject(true);
+    constructor(private http: HttpClient, private user: UserService) {
         this.url = Constants.BACKEND_URL;
+    }
+
+    setActualUser(name: string) {
+        this.userName.next('Hola, ' + name.charAt(0).toUpperCase() + name.slice(1));
+        this.userIsLogged.next(true);
     }
 
     login(username: string, password: string) {

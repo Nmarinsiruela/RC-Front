@@ -14,6 +14,7 @@ import { AdminComponent } from './admin/admin.component';
 import { BasicComponent } from './basic/basic.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalComponent } from './admin/admin.createUser.modal';
+import { CharacterInfoComponent } from './character-info/character-info.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgbdModalComponent } from './admin/admin.createUser.modal';
     UserMenuComponent,
     AdminComponent,
     BasicComponent,
-    NgbdModalComponent
+    NgbdModalComponent,
+    CharacterInfoComponent
   ],
   imports: [
     BrowserModule,

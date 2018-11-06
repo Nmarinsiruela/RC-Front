@@ -2,7 +2,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { Constants } from '../app.constants';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthenticationService } from '../_services';
+import { AuthenticationService, UserService } from '../_services';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +19,8 @@ export class SignupComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private zone: NgZone
+    private zone: NgZone,
+    private userService: UserService
   ) {}
 
   ngOnInit() {
@@ -56,6 +57,7 @@ export class SignupComponent implements OnInit {
     this.zone.run(() => {
       this.router.navigate([Constants.USERMENU_URL]);
     });
+    this.userService.setActualPage(Constants.USERMENU_URL);
     /*         this.authenticationService.signup(this.f.username.value, this.f.email.value, this.f.password.value)
           .pipe(first())
           .subscribe(

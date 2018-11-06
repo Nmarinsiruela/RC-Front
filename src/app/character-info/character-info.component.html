@@ -1,0 +1,84 @@
+<div class='row'>
+  <div class='col-6'>
+    <div class='row'>
+      <div class='col-3'>
+        <h3 style='text-align: center'>Datos Básicos</h3>
+        <ul>
+          <li>Nombre: {{actualSheet.name}}</li>
+          <li>Raza: {{actualSheet.race}}</li>
+          <li>Edad: {{actualSheet.age}}</li>
+          <li>Alineamiento: {{actualSheet.alignment}}</li>
+          <br>
+          <li>Profesión: {{actualSheet.profession}}</li>
+          <li>Estamento: {{actualSheet.status}}</li>
+          <li>Usuario: {{actualSheet.username}}</li>
+          <br>
+          <li>Puntos de Experiencia: {{actualSheet.xp}}</li>
+          <li>Puntos de Experiencia gastados: {{actualSheet.sXP}}</li>
+        </ul>
+      </div>
+
+      <div class='col-3'>
+        <h3 style='text-align: center'>Imagen</h3>
+        <img class="fixedImage" src={{actualSheet.image}}>
+      </div>
+    </div>
+    <br>
+    <div class='col-1'>
+      <h3 style='text-align: center'>Características</h3>
+      <table class='table table-sm'>
+        <tbody>
+          <tr *ngFor='let stat of stats; let i = index'>
+            <td>{{stat}}</td>
+            <td>{{actualSheet.stats.getStat(i)}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class='col-6'>
+    <h3 style='text-align: center'>Habilidades</h3>
+    <div class='row'>
+
+      <div class='col-4'>
+        <h4 style='text-align: center'>Combate</h4>
+        <table class='table table-sm'>
+          <tbody>
+            <tr *ngFor='let attribute of combat; let i = index'>
+              <td>{{attribute}}</td>
+              <td>{{0}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class='col-4'>
+        <h4 style='text-align: center'>Físicas</h4>
+        <table class='table table-sm'>
+          <tbody>
+            <tr *ngFor='let attribute of physics; let i = index'>
+              <td>{{attribute}}</td>
+              <td>{{0}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class='col-4'>
+        <h4 style='text-align: center'>Mentales</h4>
+        <table class='table table-sm'>
+          <tbody>
+            <tr *ngFor='let stat of stats; let i = index'>
+              <td>{{stat}}</td>
+              <td>{{actualSheet.stats.getStat(i)}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</div>

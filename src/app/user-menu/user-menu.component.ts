@@ -35,7 +35,7 @@ export class UserMenuComponent implements OnInit {
   selectCharacter(char: number) {
     console.log('Admin');
     this.userService.setActualPage(Constants.CHARACTER_URL);
-    this.userService.setSelectedCharacter(this.characters[char].id)
+    this.userService.setSelectedCharacter(this.characters[char].id);
     this.zone.run(() => {
       this.router.navigate([Constants.CHARACTER_URL]);
     });

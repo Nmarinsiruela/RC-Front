@@ -1,54 +1,54 @@
 export class Stats {
-  str: number;
+  fue: number;
   agi: number;
-  end: number;
+  agu: number;
   int: number;
-  spi: number;
-  wil: number;
+  esp: number;
+  vol: number;
   per: number;
 
-  constructor(str: number, agi: number, end: number, int: number, spi: number, wil: number, per: number) {
-    this.str = str;
+  constructor(fue: number, agi: number, agu: number, int: number, esp: number, vol: number, per: number) {
+    this.fue = fue;
     this.agi = agi;
-    this.end = end;
+    this.agu = agu;
     this.int = int;
-    this.spi = spi;
-    this.wil = wil;
+    this.esp = esp;
+    this.vol = vol;
     this.per = per;
   }
 
-  setStats(str, agi, end, int, spi, wil, per) {
-    this.str = str;
+  setStats(fue, agi, agu, int, esp, vol, per) {
+    this.fue = fue;
     this.agi = agi;
-    this.end = end;
+    this.agu = agu;
     this.int = int;
-    this.spi = spi;
-    this.wil = wil;
+    this.esp = esp;
+    this.vol = vol;
     this.per = per;
   }
 
   getStat(val: number) {
     switch (val) {
       case 0:
-        return this.str;
+        return this.fue;
       case 1:
         return this.agi;
       case 2:
-        return this.end;
+        return this.agu;
       case 3:
         return this.int;
       case 4:
-        return this.spi;
+        return this.esp;
       case 5:
-        return this.wil;
+        return this.vol;
       case 6:
         return this.per;
     }
   }
 
   getStats() {
-    return {'strength': this.str, 'agility': this.agi, 'end': this.end,
-     'intelligence': this.int, 'spirit': this.spi, 'will': this.wil, 'perception': this.per};
+    return {'fueength': this.fue, 'agility': this.agi, 'agu': this.agu,
+     'intelligence': this.int, 'esprit': this.esp, 'voll': this.vol, 'perception': this.per};
   }
 
 }

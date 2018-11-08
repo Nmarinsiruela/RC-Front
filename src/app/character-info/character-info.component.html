@@ -28,9 +28,9 @@
       <h3 style='text-align: center'>Características</h3>
       <table class='table table-sm'>
         <tbody>
-          <tr *ngFor='let stat of stats; let i = index'>
-            <td>{{stat}}</td>
-            <td>{{actualSheet.stats.getStat(i)}}</td>
+          <tr *ngFor='let stat of stats'>
+            <td>{{stat.name}}</td>
+            <td>{{stat.value}}</td>
           </tr>
         </tbody>
       </table>
@@ -46,9 +46,9 @@
         <h4 style='text-align: center'>Combate</h4>
         <table class='table table-sm'>
           <tbody>
-            <tr *ngFor='let attribute of combat; let i = index'>
-              <td>{{attribute}}</td>
-              <td>{{0}}</td>
+            <tr *ngFor='let attribute of combat'>
+              <td>{{attribute.name}}</td>
+              <td>{{attribute.value}}</td>
             </tr>
           </tbody>
         </table>
@@ -58,9 +58,9 @@
         <h4 style='text-align: center'>Físicas</h4>
         <table class='table table-sm'>
           <tbody>
-            <tr *ngFor='let attribute of physics; let i = index'>
-              <td>{{attribute}}</td>
-              <td>{{0}}</td>
+            <tr *ngFor='let attribute of physics'>
+              <td>{{attribute.name}}</td>
+              <td>{{attribute.value}}</td>
             </tr>
           </tbody>
         </table>
@@ -70,9 +70,9 @@
         <h4 style='text-align: center'>Mentales</h4>
         <table class='table table-sm'>
           <tbody>
-            <tr *ngFor='let stat of stats; let i = index'>
-              <td>{{stat}}</td>
-              <td>{{actualSheet.stats.getStat(i)}}</td>
+            <tr *ngFor='let attribute of mentals'>
+              <td>{{attribute.name}}</td>
+              <td>{{attribute.value}}</td>
             </tr>
           </tbody>
         </table>

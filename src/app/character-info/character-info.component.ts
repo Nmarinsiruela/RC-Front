@@ -12,13 +12,18 @@ import { Constants } from '../app.constants';
 export class CharacterInfoComponent implements OnInit {
   actualSheet: Sheet;
   stats: string[];
-  combat = Constants.COMBAT;
-  physics = Constants.PHYSICS;
+  combat;
+  physics;
+  mentals;
   constructor(private router: Router, private zone: NgZone, private userService: UserService) { }
 
   ngOnInit() {
-    this.stats = Constants.STATS;
     this.actualSheet = this.userService.getSheet(this.userService.getSelectedCharacter());
+    const  { stats, skills } = this.actualSheet;
+    this.stats = this.userService.getValues(stats);
+    this.combat = this.userService.getValues(skills.combat);
+    this.physics = this.userService.getValues(skills.physics);
+    this.mentals = this.userService.getValues(skills.mentals);
   }
 
 }

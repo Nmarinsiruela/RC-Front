@@ -47,8 +47,8 @@ export class Stats {
   }
 
   getStats() {
-    return {'fueength': this.fue, 'agility': this.agi, 'agu': this.agu,
-     'intelligence': this.int, 'esprit': this.esp, 'voll': this.vol, 'perception': this.per};
+    return {'strength': this.fue, 'agility': this.agi, 'endurance': this.agu,
+     'intelligence': this.int, 'spirit': this.esp, 'will': this.vol, 'perception': this.per};
   }
 
 }

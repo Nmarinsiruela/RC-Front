@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Warning!
 
-The master version does only contain the most basic of the functionality, as it's still being built. Take a look at the different branches!
+The `master` version does only contain the most basic of the functionality, as it's still being built. The branch `develop` does have the most updated code!
 
 ## Development server
 

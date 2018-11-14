@@ -14,17 +14,4 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  goToSignup() {
-    console.log('Signup');
-    this.zone.run(() => {
-      this.router.navigate([Constants.SIGNUP_URL]);
-    });
-  }
-
-  goToLogin() {
-    console.log('Login');
-    this.zone.run(() => {
-      this.router.navigate([Constants.LOGIN_URL]);
-    });
-  }
 }

@@ -1,0 +1,36 @@
+<div class=' adminComponent row'>
+  <div class='col-6'>
+      Users from secure api end point:
+      <button (click)='fetchAllUsers()'>Recargar</button>
+      <ul>
+        <li *ngFor="let user of users; let i = index">Username: {{user.username}} Max Status: {{user.maxStatus}}
+          <button (click)='goToUser(i)'>Acceder</button>
+        </li>
+      </ul>
+      <app-create-user-modal></app-create-user-modal>
+  </div>
+
+  <div class='col-6'>
+    <div *ngIf='!!userIsSelected === true'>
+      <p>User: {{selectedUser.username}}</p>
+      <form [formGroup]="updateForm" (ngSubmit)="updateUser()">
+        <div class="form-group">
+          <label color="primary">Max Status:</label>
+          <select class="input alin" formControlName="newStatus" [ngClass]="{ 'is-invalid': submitted && f.newStatus.errors }"
+            required>
+            <option *ngFor="let est of statusNames" [value]="est">{{est}}</option>
+          </select>
+          <div *ngIf="submitted && !!f.newStatus.errors" class="invalid-feedback">
+            <div *ngIf="!!f.newStatus.errors.required">Status is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Update Account</button>
+        </div>
+    </form>
+      <p>Characters: {{selectedUser.characters}}</p>
+
+      <button (click)='deleteUser(selectedUser.id)'>Borrar</button>
+    </div>
+  </div>
+</div>

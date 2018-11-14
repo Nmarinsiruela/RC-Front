@@ -1,3 +1,31 @@
-<p>
-  user-menu works!
-</p>
+<div class='row'>
+  <!-- style='visibility:hidden' && actualChar != 0 -->
+  <div class='col-1 align-self-center' *ngIf="actualChar == 0 ">
+    <button type="button" style='visibility:hidden' class="btn btn-default"></button>
+  </div>
+
+  <div class='col-1 align-self-center' *ngIf="characters.length > 1 && actualChar != 0 ">
+    <button type="button" class="btn btn-default" (click)='switchCharacter(0)'>
+      <i class="carousel-control-prev-icon"></i>
+    </button>
+  </div>
+  <div class='col-10'>
+    <div class="card" style="display: block; margin: 3%; width: 75%;">
+      <div class="card-body">
+            <h3 class="card-title" style="text-align: center">{{characters[actualChar].name}}</h3>
+            <h4 class="card-title" style="text-align: center">{{characters[actualChar].status}}</h4>
+        <div style='display: block; text-align: center;'>
+          <img class="fixedImage" src={{characters[actualChar].image}} alt={{characters[actualChar].name}}>
+        </div>
+        <div style='display: block; margin: 1%; text-align: center;'>
+          <button (click)='selectCharacter(actualChar)'>Ver Hoja de PJ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='col-1 align-self-center' *ngIf="characters.length > 1 && actualChar != characters.length -1">
+    <button type="button" class="btn btn-default" (click)='switchCharacter(1)'>
+      <i class="carousel-control-next-icon"></i>
+    </button>
+  </div>
+</div>

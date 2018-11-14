@@ -10,6 +10,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { UserMenuComponent } from './user-menu/user-menu.component';
+import { AdminComponent } from './admin/admin.component';
+import { BasicComponent } from './basic/basic.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalComponent } from './admin/admin.createUser.modal';
+import { CharacterInfoComponent } from './character-info/character-info.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +22,18 @@ import { UserMenuComponent } from './user-menu/user-menu.component';
     SignupComponent,
     LoginComponent,
     DashboardComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    AdminComponent,
+    BasicComponent,
+    NgbdModalComponent,
+    CharacterInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-        HttpClientModule,
+    HttpClientModule,
+    NgbModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -12,7 +12,7 @@ import { Character } from '../_models/character';
 export class UserMenuComponent implements OnInit {
   characters: Character[];
   actualChar = 0;
-  constructor(private router: Router, private zone: NgZone, private user: UserService) { }
+  constructor(private router: Router, private zone: NgZone, private userService: UserService) { }
 
   ngOnInit() {
     this.characters = [];
@@ -24,13 +24,6 @@ export class UserMenuComponent implements OnInit {
     this.characters.push(char3);
   }
 
-  goToAdmin() {
-    console.log('Admin');
-    this.zone.run(() => {
-      this.router.navigate([Constants.ADMIN_URL]);
-    });
-  }
-
   activeIfFirst(val: number) {
     return val === 0 ? 'active' : '';
   }
@@ -39,14 +32,12 @@ export class UserMenuComponent implements OnInit {
     (val === 0) ? this.actualChar-- : this.actualChar++;
   }
 
-  goToBasic() {
-    console.log('Basic');
+  selectCharacter(char: number) {
+    console.log('Admin');
+    this.userService.setActualPage(Constants.CHARACTER_URL);
+    this.userService.setSelectedCharacter(this.characters[char].id);
     this.zone.run(() => {
-      this.router.navigate([Constants.BASIC_URL]);
+      this.router.navigate([Constants.CHARACTER_URL]);
     });
-  }
-
-  selectCharacter(char: string) {
-    console.log(char);
   }
 }
